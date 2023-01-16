@@ -1,0 +1,13 @@
+version: '0.1'
+
+services:
+  database:
+    image: postgres:14.4-alpine
+    container_name: cleaningServiceDB
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./cleaningServiceDBVolume:/var/lib/postgresql/data
